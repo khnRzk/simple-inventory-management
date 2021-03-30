@@ -24,25 +24,25 @@ class DBOperation {
 
     }
 
-    public function addBrand() {
-        $pre_sta = $this->con->prepare('');
-        $pre_sta->bind_param('');
-        $result =$pre_sta->execute() or die($this->con->error);
-        if($result){
-            echo "Brand Added";
-        } else {
-            return 0;
-        }
-    }
+    // public function addBrand() {
+    //     $pre_sta = $this->con->prepare('');
+    //     $pre_sta->bind_param('');
+    //     $result =$pre_sta->execute() or die($this->con->error);
+    //     if($result){
+    //         echo "Brand Added";
+    //     } else {
+    //         return 0;
+    //     }
+    // }
 
-    public function addProducts() {
-        $pre_sta = $this->con->prepare('');
-        $pre_sta->bind_param('');
-        $result = $pre_sta->execute() or die($this->con->error);
-        if($result) {
+    // public function addProducts() {
+    //     $pre_sta = $this->con->prepare('');
+    //     $pre_sta->bind_param('');
+    //     $result = $pre_sta->execute() or die($this->con->error);
+    //     if($result) {
             
-        }
-    }
+    //     }
+    // }
 }
 
 $drb = new DBOperation;
