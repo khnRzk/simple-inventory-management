@@ -8,11 +8,23 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <form>
+          <div class="form-group">
+            <label> Category Name</label>
+            <input type="text" class="form-control" name="cat_name" id="cat_id">
+            <small id="cat_error" class="small form-text text-muted"></small>
+          </div>
+
+          <div class="form-group">
+            <label> Parent Category</label>
+            <select class="form-control" name="parent_cat" id="parent_cat">
+              <option value="0">Root</option>
+            </select>
+            <small id="par_error" class="small form-text text-muted"></small>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add Category</button>
+        </form>
       </div>
     </div>
   </div>

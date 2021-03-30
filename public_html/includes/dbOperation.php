@@ -24,29 +24,25 @@ class DBOperation {
 
     }
 
-    // public function addBrand() {
-    //     $pre_sta = $this->con->prepare('');
-    //     $pre_sta->bind_param('');
-    //     $result =$pre_sta->execute() or die($this->con->error);
-    //     if($result){
-    //         echo "Brand Added";
-    //     } else {
-    //         return 0;
-    //     }
-    // }
-
-    // public function addProducts() {
-    //     $pre_sta = $this->con->prepare('');
-    //     $pre_sta->bind_param('');
-    //     $result = $pre_sta->execute() or die($this->con->error);
-    //     if($result) {
-            
-    //     }
-    // }
+    public function getAllRecords($table) {
+        $pre_sta = $this->con->prepare("SELECT * FROM ".$table);
+        $pre_sta->execute() or die($this->con->error);
+        $result= $pre_sta->get_result();
+        $rows = array();
+        if($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+            return $rows;
+        }
+        return "No_DATA";
+    }
 }
 
 $drb = new DBOperation;
 
-echo $drb->addCategories(1,'electronics');
+// echo $drb->addCategories(1,'electronics');
+echo "<pre>";
+print_r($drb->getAllRecords('category '));
 
 ?>
